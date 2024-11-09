@@ -703,25 +703,25 @@
 # n1 = Node(5, n2)
 # head = Node(n1)
 
-class Student:
-    def setName(self, name):
-        self.name = name
-    def getName(self):
-        return self.name
+# class Student:
+#     def setName(self, name):
+#         self.name = name
+#     def getName(self):
+#         return self.name
 
-    def setAge(self, age):
-        self.age = age
-    def getAge(self):
-        return self.age
+#     def setAge(self, age):
+#         self.age = age
+#     def getAge(self):
+#         return self.age
 
 # s1 = Student("Soumyajit", 21)
 # ctrl + / to commemt & uncomment
 
-s2 = Student()
-s2.setName("Sohona")
-s2.setAge(20)
+# s2 = Student()
+# s2.setName("Sohona")
+# s2.setAge(20)
 
-print(s2.getAge(), s2.getName())
+# print(s2.getAge(), s2.getName())
 
 
 # HomeWork: Create an Employee Class & create parameterized constructor & getters and setter with atleast 5 instance and 2 static variables.
@@ -748,6 +748,8 @@ print(s2.getAge(), s2.getName())
 # i1.m1()
 
 # i2 = Outer().Inner().Inner2()
+
+#Today we will study about Python Exception Handling
 
 
 
