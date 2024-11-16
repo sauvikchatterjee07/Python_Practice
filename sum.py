@@ -751,9 +751,156 @@
 
 #Today we will study about Python Exception Handling
 
+# The runtime errors are called exceptions. 
+
+# def division(a, b):
+#     try:
+#         print(f"The result is {a/b}")
+#     except ZeroDivisionError:
+#         print(f"The denominator can't be zero.")
+    
+#     except Exception:
+#         print(f"Some error has occured, try again after some time.")
+
+# for i in range (0, 6):
+#     division(15, i)
+
+
+# The denominator can't be zero.
+# 15
+# 7.50
+# 5
+# 3.75
+# 3
+
+
+# x = "Awesome" 
+
+# def myFun():
+#     global x
+#     x = "Fantastic"
+#     print("Python is :" + x)
+
+# print("Python is :" + x)
+# myFun()
+# print("Python is :" + x)
+
+# try:
+#     print(0/0)
+#     print(16/4)
+#     print(15/3)
+#     print(0/0)
+#     print(16/4)
+#     print(15/3)
+# except Exception:
+#     try:
+#         print(17/0)
+#     except Exception:
+#         print("Again you are dividing by zero")
+#     print("Division by Zero not possible")
+# finally:
+#     try:
+#         print(9/0)
+#     except AttributeError:
+#         print("Finally the end")
+#     except ZeroDivisionError:
+#         print("Finally the end from ZeroDivisionError")
+#     print("Thank you")
+
+# try:
+#     raise ArithmeticError
+# except ZeroDivisionError:
+#     print("Hello")
+# except ArithmeticError:
+#     print("Hi")
+# except Exception:
+#     print("Bye")
+# finally:
+#     print("Thank you")
+
+
+#Bank Management System:
+#Greetings!
+#Menu options:
+    #Deposit
+    #Withdrawal
+    #Mutual Fund
+    #Loan
+
+from math import ceil
+import random as r
+
+def compoundInterest(principal, rateOfInterest, time):
+    time = time/365
+    # print(f"{principal, type(principal)} \n {rateOfInterest, type(rateOfInterest)} \n {time, type(time)}")
+
+    amount = int(principal) * (1+ (rateOfInterest / 100))**(time)
+    return amount
+
+def fixedDeposit():
+    amount = input("Enter the amount you want to deposit.")
+    timePeriod = int(input("General Deposit interest is 6.5% \n if you Deposit for 400 days you'll get 7.25% per annum.\n For general deposit Press 1\n For 400 days Deposit press 2."))
+    
+    if(timePeriod == 1):
+        exactTimePeriod = int(input("For how many years you want to deposit?")) * 365
+        finalAmount = compoundInterest(amount,6.5,exactTimePeriod)
+        print(f"\nYou have Depositted {amount} INR for {exactTimePeriod/365} years\n you will get{finalAmount} when your Deposit will get matured.\n")
+
+
+    elif(timePeriod == 2):
+        finalAmount = compoundInterest(amount,7.25,400)
+        
+        print(f"\nYou have Depositted {amount} INR for 400 Days\n you will get : {ceil(finalAmount)} when your Deposit will get matured.\n")
+
+
+def withdraw():
+    pass
+
+def loan():
+    pass
+
+def mutualFund():
+    # 8 to 10
+    random_number = r.uniform(8, 10)
+
+def recurringDeposit():
+    pass
 
 
 
+def bankWork(userInput):
+    match userInput:
+        case 1: #Fixed Deposit
+            fixedDeposit()
+        case 2: #Withdrawal
+            withdraw()
+        case 3: #Loan
+            loan()
+        case 4: #Mutual Fund
+            mutualFund()
+        case 5: #Recurring Deposit
+            recurringDeposit()
 
 
+# name = input("What is your name?")
+# flag = True
+print(round(r.uniform(8, 15),2))
+while False:
 
+    print(f"{name} - Welcome to our Bank! \n What would you like to do today?")
+
+    userInput = int(input("Press 1 if you want to deposit some money.\nPress 2 if you want to withdraw some money.\nPress 3 if you want to take loan.\nPress 4 if you want to start a mutual fund.\nPress 5 if you want to start a Recurring Deposit."))
+
+
+    bankWork(userInput)
+
+
+    flag = input("Do you want to do any other activities? yes/no")
+
+    if (flag == "yes"):
+        flag = True
+    else:
+        flag = False 
+
+
+print("Thanks! Visit Again.")
